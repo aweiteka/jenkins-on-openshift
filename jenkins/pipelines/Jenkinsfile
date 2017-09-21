@@ -8,7 +8,9 @@ pipeline {
             steps {
                 //git url: 'https://github.com/aweiteka/jenkins-on-openshift.git'
                 // only checkout if Jenkins config has changed
-                checkout([$class: 'GitSCM', branches: [[name: 'multi-pipeline']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'PathRestriction', excludedRegions: '''ansible/* app/* Jenkinsfile''', includedRegions: 'jenkins/*']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/aweiteka/jenkins-on-openshift.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/multi-pipeline']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'PathRestriction', excludedRegions: '''ansible/*
+app/*''', includedRegions: 'jenkins/*']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/aweiteka/jenkins-on-openshift']]])
+
         stage('Trigger build') {
             steps {
                 openshiftBuild bldCfg: 'jenkins-custom'
