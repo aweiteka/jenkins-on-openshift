@@ -4,16 +4,19 @@ pipeline {
         pollSCM('H/5 * * * *')
     }
     stages {
-        stage('Hello world') {
+        stage('Checkout') {
             steps {
-                echo "Running some test..."
+                //git url: 'https://github.com/aweiteka/jenkins-on-openshift.git'
+                // only checkout if Jenkins config has changed
+                checkout([$class: 'GitSCM', branches: [[name: 'multi-pipeline']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'PathRestriction', excludedRegions: '''ansible/* app/* Jenkinsfile''', includedRegions: 'jenkins/*']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/aweiteka/jenkins-on-openshift.git']]])
+        stage('Trigger build') {
+            steps {
+                openshiftBuild bldCfg: 'jenkins-custom'
             }
         }
-    }
-    stages {
-        stage('Hello world, again') {
+        stage('Trigger deployment') {
             steps {
-                echo "Running another test..."
+                openshiftDeploy depCfg: 'jenkins'
             }
         }
     }
