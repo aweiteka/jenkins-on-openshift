@@ -10,4 +10,11 @@ pipeline {
             }
         }
     }
+    stages {
+        stage('Hello world, again') {
+            steps {
+                echo "Running another test..."
+            }
+        }
+    }
 }
