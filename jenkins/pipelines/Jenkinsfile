@@ -7,7 +7,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 //git url: 'https://github.com/aweiteka/jenkins-on-openshift.git'
-                // only checkout if Jenkins config has changed
+                // only checkout if Jenkins config has changed altogether
                 checkout([$class: 'GitSCM',
                     branches: [[name: "*/multi-pipeline"]],
                     doGenerateSubmoduleConfigurations: false,
