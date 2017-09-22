@@ -16,6 +16,7 @@ github-organization-folder:1.6
 github:1.27.0
 #job-dsl:1.63
 
+
 # lockable resource - Used with openshift-client.  Make sure a buildconfig is not running
 # concurrently - https://wiki.jenkins-ci.org/display/JENKINS/Lockable+Resources+Plugin
 #lockable-resources:1.11.2
