@@ -13,8 +13,7 @@ pipeline {
                     doGenerateSubmoduleConfigurations: false,
                     extensions: [[
                         $class: 'PathRestriction',
-                        excludedRegions: 'ansible/.*',
-                        includedRegions: 'jenkins/.*']],
+                        excludedRegions: '/ansible/.*',]],
                     submoduleCfg: [],
                     userRemoteConfigs: [[
                         url: 'https://github.com/aweiteka/jenkins-on-openshift']]])
