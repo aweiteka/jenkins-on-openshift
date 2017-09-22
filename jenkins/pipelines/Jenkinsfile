@@ -22,12 +22,14 @@ pipeline {
         }
         stage('Trigger build') {
             steps {
-                openshiftBuild bldCfg: 'jenkins-custom'
+                //openshiftBuild bldCfg: 'jenkins-custom'
+                echo 'Tiggering build'
             }
         }
         stage('Trigger deployment') {
             steps {
-                openshiftDeploy depCfg: 'jenkins'
+                //openshiftDeploy depCfg: 'jenkins'
+                echo 'triggering deployment'
             }
         }
     }
