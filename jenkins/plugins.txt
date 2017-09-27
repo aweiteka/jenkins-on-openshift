@@ -5,7 +5,6 @@ openshift-client:0.9.7
 config-file-provider:2.16.2
 #docker-commons:1.8
 
-
 generic-webhook-trigger:1.10
 git-client:2.5.0
 git:3.4.0
