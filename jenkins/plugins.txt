@@ -1,5 +1,5 @@
 kubernetes:1.0
-# OpenShift Jenkins plugins
+# OpenShift Jenkins plugin
 openshift-client:0.9.7
 
 config-file-provider:2.16.2
