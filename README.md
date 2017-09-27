@@ -10,3 +10,5 @@ The Vagrantfile is provided to bootstrap a local RHEL-based workstation pre-inst
 
         vagrant plugin install vagrant-triggers
 - Install Red Hat Enterprise Linux vagrant box. [Download](https://developers.redhat.com/products/rhel/download/)
+
+Done
