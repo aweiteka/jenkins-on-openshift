@@ -29,3 +29,5 @@ These are a set of reference playbooks to configure an application project names
 1. Run the playbook:
 
         ansible-playbook -i ansible/inventory.yml ansible/main.yml
+
+ss
